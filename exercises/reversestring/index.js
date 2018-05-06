@@ -6,6 +6,7 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
+// First soln:
 // reverse = (str) => {
 //   let newStr = [];
 //   for (let i = str.length - 1; i >= 0; i--) {
@@ -21,4 +22,4 @@ function reverse(str) {
     return str.split('').reduce((rev, char) => char + rev, '');
   }
 
-  module.exports = reverse;
+  export default reverse;
