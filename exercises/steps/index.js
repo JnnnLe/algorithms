@@ -42,7 +42,7 @@ function steps(n, row = 0, stair = '') {
     return;
   }
 
-  //end of a row
+  //continue to end of a row
   if (n === stair.length) {
     console.log(stair);
     //rescursive step:
