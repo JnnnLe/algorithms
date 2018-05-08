@@ -5,6 +5,21 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-function maxChar(str) {}
+function maxChar(str) {
+  let count = {};
+
+  for (let char of str) {
+    if (!count[char]) {
+      count[char] = 1;
+      
+    } else {
+      count[char]++;
+    }
+  }
+  
+  count.keys(obj).reduce((a, b) => {
+    return obj[a] > obj[b] ? a : b
+  })
+}
 
 module.exports = maxChar;
