@@ -16,7 +16,15 @@ function maxChar(str) {
       count[char]++;
     }
   }
-  
+  //
+  // let max = 0;
+  //for (let char in count) {
+    // if (count[char] > max) {
+    //   max = count[char];
+    //   count = char
+    // }
+  // }
+  // return count
   return Object.keys(count).reduce((a, b) => {
     return count[a] > count[b] ? a : b
   })
