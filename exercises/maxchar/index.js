@@ -17,8 +17,8 @@ function maxChar(str) {
     }
   }
   
-  count.keys(obj).reduce((a, b) => {
-    return obj[a] > obj[b] ? a : b
+  return Object.keys(count).reduce((a, b) => {
+    return count[a] > count[b] ? a : b
   })
 }
 
