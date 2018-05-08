@@ -17,6 +17,45 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+//iterative soln: 
+// function steps(n) {
+//   for (let row = 0; row < n; row++) {
+//     let stair = '';
+
+//     for (let col = 0; col < n; col++) {
+
+//       if (col <= row) {
+//         stair += '#';
+//       } else {
+//         stair += ' ';
+//       }
+
+//     }
+//     console.log(stair);
+//   }
+// }
+
+//recursion soln:
+function steps(n, row = 0, stair = '') {
+  //base case:
+  if (n === row) {
+    return;
+  }
+
+  //end of a row
+  if (n === stair.length) {
+    console.log(stair);
+    //rescursive step:
+    return steps(n, row + 1);
+  }
+  
+  //first hit case
+  if (stair.length <= row) {
+    stair += '#';
+  } else {
+    stair += ' ';
+  }
+  steps(n, row, stair);
+}
 
 module.exports = steps;
