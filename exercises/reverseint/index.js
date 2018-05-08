@@ -15,7 +15,8 @@ function reverseInt(n) {
   //return the reversed int, must be int
 
   let reversed = [];
-  let strInt = n.toString().split('');
+  let strInt = n.toString()
+                .split('');
 
   if (Math.sign(n) === -1) {
     for (let i = strInt.length - 1; i > 0; i--) {
