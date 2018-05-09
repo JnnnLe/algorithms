@@ -10,11 +10,58 @@
 //     [8, 9, 4],
 //     [7, 6, 5]]
 //  matrix(4)
-//     [[1,   2,  3, 4],
+//     [[1, 2, 3, 4],
 //     [12, 13, 14, 5],
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+function matrix(n) {
+  // 1.) creating an arr of arrays in respect to n by iteration
+  const result = [];
+  let counter = 1;
+
+  for (let i = 0; i < n; i++) {
+    result.push([]);
+  }
+
+  let startRow = 0;
+  let startCol = 0;
+  let endRow = n - 1;
+  let endCol = n - 1;
+
+  while (startCol <= endCol && startRow <= endRow) {
+
+    //top Row
+    for (let i = startCol; i <= endCol; i++) {
+      result[startRow][i] = counter;
+      counter++;
+    }
+    startRow++;
+
+    // Right Col
+    for (let i = startRow; i <= endRow; i++) {
+      result[i][endCol] = counter;
+      counter++;
+    }
+    endCol--;
+
+    // Bottom Row
+    for (let i = endCol; i >= startCol; i--) {
+      result[endRow][i] = counter;
+      counter++;
+    }
+    endRow--;
+
+    // Start Col
+    for (let i = endRow; i >= startRow; i--) {
+      result[i][startCol] = counter;
+      counter++;
+    }
+    startCol++;
+  }
+
+  return result;
+
+}
 
 module.exports = matrix;
