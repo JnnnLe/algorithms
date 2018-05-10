@@ -11,17 +11,17 @@
 class Queue {
   constructor() {
     this.storage = [];
-
   }
 
   add(data) {
-    this.storage.unshift(data)
-    return this.storage;
+    this.storage.unshift(data);
+    // return this.storage;
   }
 
   remove() {
     return this.storage.pop();
   }
+
 }
 
 module.exports = Queue;
