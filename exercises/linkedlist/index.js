@@ -11,7 +11,25 @@ class Node {
 }
 
 class LinkedList {
-  //using obj to save key/value pairs
+  constructor() {
+    this.head = null;
+  }
+
+  insertFirst(data) {
+    this.head = new Node(data, this.head);
+  }
+
+  size() {
+    let counter = 0;
+
+    while (this.head) {
+      counter++;
+      this.head = this.head.next;
+    }
+    
+    return counter;
+  }
+
 }
 
 module.exports = { Node, LinkedList };
