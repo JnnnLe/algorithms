@@ -30,6 +30,41 @@ class LinkedList {
     return counter;
   }
 
+  getFirst() {
+    return this.head;
+  }
+
+  getLast() {
+    let node = this.head;
+
+    if (!this.head) { 
+      return null;
+    }
+
+    while (node) {
+      if (!node.next) {
+        return node;
+      }
+      node = node.next;
+    }
+  }
+
+  clear() {
+    this.head = null;
+  }
+
+  removeFirst() {
+    // let node = this.head;
+
+    if (!this.head) {
+      return; 
+    }
+
+    this.head = this.head.next;
+  }
+
+
 }
+
 
 module.exports = { Node, LinkedList };
