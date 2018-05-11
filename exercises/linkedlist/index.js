@@ -11,9 +11,7 @@ class Node {
 }
 
 class LinkedList {
-  constructor() {
-    this.head = null;
-  }
+  constructor() {};
 
   insertFirst(data) {
     this.head = new Node(data, this.head);
@@ -54,8 +52,6 @@ class LinkedList {
   }
 
   removeFirst() {
-    // let node = this.head;
-
     if (!this.head) {
       return; 
     }
@@ -63,8 +59,28 @@ class LinkedList {
     this.head = this.head.next;
   }
 
+  removeLast() {
+    // length === 0
+    if (this.head) {
+      return;
+    }
+    
+    // length === 1
+    if (this.head.next) {
+      previous = null;
+      return;
+    }
+    
+    let previous = this.head;
+    let node = this.head.next;
+    while (node.next) {
+      previous = node;
+      node = node.next;
+    }  
+    
+    previous.next = null;
+  }
 
 }
-
 
 module.exports = { Node, LinkedList };
