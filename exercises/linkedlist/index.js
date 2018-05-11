@@ -59,6 +59,7 @@ class LinkedList {
     this.head = this.head.next;
   }
 
+  //reimplement
   removeLast() {
     // length === 0
     if (this.head) {
