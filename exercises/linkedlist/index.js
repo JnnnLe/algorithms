@@ -23,7 +23,66 @@ class LinkedList {
   }
 
   size () {
+    let count = 0;
+    let node = this.head;
+
+    while (node) {
+      count++;
+      node = node.next;
+    }
+
+    return count;
+  }
+
+  getFirst() {
+    return this.head;
+  }
+
+  getLast() {
+    if (!this.head) {
+      return null;
+    }
+
+    let node = this.head;
+
+    while (node) {
+      if (node.next === null) {
+        return node;
+      }
+
+      //other wise update to the next node run the check again
+      node = node.next;
+    }
+  }
+
+  clear() {
+    this.head = null;
+  }
+
+  removeFirst() {
+    this.head = this.head.next;
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return;
+    }
     
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+
+    let prev = this.head;
+    let node = this.head.next;
+      
+    while (node.next) {
+    
+      prev = node;
+      node = node.next;
+    }
+
+    prev.next = null;
   }
 
 
