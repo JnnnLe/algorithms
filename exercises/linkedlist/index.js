@@ -90,6 +90,7 @@ class LinkedList {
   }
 
   getAt(index) {
+    //getFirst + getLast fore scope
     let count = 0;
     let node = this.head;
     while (node) {
@@ -134,6 +135,22 @@ class LinkedList {
     const previous = this.getAt(index - 1) || this.getLast();
     const node = new Node (data, previous.next);
     previous.next = node;
+  } 
+
+  forEach(fn) {
+
+    if (!this.head) {
+      return null;
+    }
+
+    let node = this.head;
+    let counter = 0;
+
+    while (node) {
+      fn(node, counter);
+      node = node.next
+      counter++;
+    }
   }
 
   //ends LinkedList  
