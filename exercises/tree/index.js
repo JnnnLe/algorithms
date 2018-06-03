@@ -27,6 +27,38 @@ class Node {
   }
 }
 
-class Tree {}
+class Tree {
+  constructor () {
+    this.root = null;
+  }
+
+  //breadth first serch, transversing by layers from left to right
+    // Company/Military heirarchy
+  traverseBF(fn) {
+    const queue = [this.root];
+
+    while (queue.length) {
+    const node = queue.shift();
+
+    queue.push(...node.children);
+    fn(node);
+    }
+  }
+
+  traverseDF(fn) {
+    const stack = [this.root];
+
+    while (stack.length) {
+      //take the first node of the stack
+      const node = stack.shift();
+
+      //if the node has children, add them to the beginning of the stack
+      stack.unshift(...node.children);
+      //perform the fn on the node
+      fn(node);
+    }
+  }
+
+}
 
 module.exports = { Tree, Node };
