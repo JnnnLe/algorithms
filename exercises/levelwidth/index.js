@@ -30,6 +30,7 @@ function levelWidth(root) {
     }
   }
   return counters;
+  console.log(counters)
 }
 
 module.exports = levelWidth;
