@@ -31,6 +31,23 @@ class Node {
       this.right = new Node(data);
     }
   }
+
+  contains(data) {
+    //base case for recursion
+    if (this.data === data) {
+      return this;
+    }
+
+    if (this.data > data && this.left) {
+      return this.left.contains(data);
+    }
+
+    if (this.data < data && this.right) {
+      return this.right.contains(data);
+    }
+
+    return null;
+  }
 }
 
 module.exports = Node;
